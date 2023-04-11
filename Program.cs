@@ -7,6 +7,9 @@
 //[“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
+
+
+
 string[] UserInput()
 {
     string[] value = new string[arrLength];
@@ -16,4 +19,14 @@ string[] UserInput()
        value[i] = Console.ReadLine();
     }
     return value;
+}
+void PrintArray (string[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length-1) Console.Write($"“{arr[i]}”, ");
+        else Console.Write($"“{arr[i]}”");
+    }
+    Console.WriteLine("]");
 }
