@@ -7,9 +7,7 @@
 //[“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
-Console.WriteLine("Данная программа, предназначена для выбора выражений из введенных пользвателем, состоящих не более чем из 3 символов");
-Console.Write("Введите количество выражений для проверки: ");
-int arrLength = Convert.ToInt32(Console.ReadLine());
+
 string[] userInputArray = UserInput();
 PrintArray(userInputArray);
 string[] newArray = ArrayThreeLength(userInputArray);
@@ -17,30 +15,33 @@ PrintArray(newArray);
 
 string[] UserInput() //Метод пользовательского ввода
 {
+    Console.WriteLine("Данная программа, предназначена для выбора выражений из введенных пользвателем, состоящих не более чем из 3 символов");
+    Console.Write("Введите количество выражений для проверки: ");
+    int arrLength = Convert.ToInt32(Console.ReadLine());
     string[] array = new string[arrLength];
     for (int i = 0; i < arrLength; i++)
     {
         Console.Write($"Введите {i + 1}й элемент массива - ");
-       array[i] = Console.ReadLine();
+        array[i] = Console.ReadLine();
     }
     return array;
 }
-void PrintArray (string[] arr)
+void PrintArray(string[] arr) // Метод печати массивов
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length-1) Console.Write($"“{arr[i]}”, ");
+        if (i < arr.Length - 1) Console.Write($"“{arr[i]}”, ");
         else Console.Write($"“{arr[i]}”");
     }
     Console.WriteLine("]");
 }
-string[] ArrayThreeLength(string[] arr)
+string[] ArrayThreeLength(string[] arr) // Метод для создания нового массива с элементами, длинна которых меньше или равна 3
 {
     int arrLength = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if(arr[i].Length <= 3)
+        if (arr[i].Length <= 3)
         {
             arrLength++;
         }
@@ -49,8 +50,8 @@ string[] ArrayThreeLength(string[] arr)
     int k = 0;
     for (int j = 0; j < arr.Length; j++)
     {
-        
-        if(arr[j].Length <= 3)
+
+        if (arr[j].Length <= 3)
         {
             newArr[k] = arr[j];
             k++;
