@@ -30,3 +30,26 @@ void PrintArray (string[] arr)
     }
     Console.WriteLine("]");
 }
+string[] ArrayThreeLength(string[] arr)
+{
+    int arrLength = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if(arr[i].Length <= 3)
+        {
+            arrLength++;
+        }
+    }
+    string[] newArr = new string[arrLength];
+    int k = 0;
+    for (int j = 0; j < arr.Length; j++)
+    {
+        
+        if(arr[j].Length <= 3)
+        {
+            newArr[k] = arr[j];
+            k++;
+        }
+    }
+    return newArr;
+}
