@@ -7,8 +7,12 @@
 //[“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
-
-
+Console.Write("Введите количество строк: ");
+int arrLength = Convert.ToInt32(Console.ReadLine());
+string[] userInputArray = UserInput();
+PrintArray(userInputArray);
+string[] newArray = ArrayThreeLength(userInputArray);
+PrintArray(newArray);
 
 string[] UserInput()
 {
