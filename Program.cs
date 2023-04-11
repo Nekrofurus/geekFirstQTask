@@ -7,22 +7,23 @@
 //[“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
-Console.Write("Введите количество строк: ");
+Console.WriteLine("Данная программа, предназначена для выбора выражений из введенных пользвателем, состоящих не более чем из 3 символов");
+Console.Write("Введите количество выражений для проверки: ");
 int arrLength = Convert.ToInt32(Console.ReadLine());
 string[] userInputArray = UserInput();
 PrintArray(userInputArray);
 string[] newArray = ArrayThreeLength(userInputArray);
 PrintArray(newArray);
 
-string[] UserInput()
+string[] UserInput() //Метод пользовательского ввода
 {
-    string[] value = new string[arrLength];
+    string[] array = new string[arrLength];
     for (int i = 0; i < arrLength; i++)
     {
         Console.Write($"Введите {i + 1}й элемент массива - ");
-       value[i] = Console.ReadLine();
+       array[i] = Console.ReadLine();
     }
-    return value;
+    return array;
 }
 void PrintArray (string[] arr)
 {
