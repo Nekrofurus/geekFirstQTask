@@ -8,10 +8,10 @@
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
 
-string[] userInputArray = UserInput();
-PrintArray(userInputArray);
-string[] newArray = ArrayThreeLength(userInputArray);
-PrintArray(newArray);
+string[] userInputArray = UserInput(); // Создаем исходный массив и запрашиваем данные у пользователя
+PrintArray(userInputArray); // Печатаем исходный массив на экран
+string[] newArray = ArrayThreeLength(userInputArray); // Создаем новый массив в котый помещаем только значения, которые меньше или равны 3
+PrintArray(newArray); // Печатаем результат на экран
 
 string[] UserInput() //Метод пользовательского ввода
 {
@@ -38,15 +38,15 @@ void PrintArray(string[] arr) // Метод печати массивов
 }
 string[] ArrayThreeLength(string[] arr) // Метод для создания нового массива с элементами, длинна которых меньше или равна 3
 {
-    int arrLength = 0;
+    int newArrLength = 0;
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
         {
-            arrLength++;
+            newArrLength++;
         }
     }
-    string[] newArr = new string[arrLength];
+    string[] newArr = new string[newArrLength];
     int k = 0;
     for (int j = 0; j < arr.Length; j++)
     {
