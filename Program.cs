@@ -38,15 +38,15 @@ void PrintArray(string[] arr) // Метод печати массивов
 }
 string[] ArrayThreeLength(string[] arr) // Метод для создания нового массива с элементами, длинна которых меньше или равна 3
 {
-    int newArrLength = 0;
+    int count = 0;
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
         {
-            newArrLength++;
+            count++;
         }
     }
-    string[] newArr = new string[newArrLength];
+    string[] newArr = new string[count];
     int k = 0;
     for (int j = 0; j < arr.Length; j++)
     {
